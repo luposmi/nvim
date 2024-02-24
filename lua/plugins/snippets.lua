@@ -5,6 +5,11 @@ return {
         version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
         -- install jsregexp (optional!).
         build = "make install_jsregexp",
+        opts = {
+            keep_roots = true,
+            link_roots = true,
+            link_children = true
+        },
 
         dependencies = { "rafamadriz/friendly-snippets" },
 
@@ -12,12 +17,11 @@ return {
             local ls = require("luasnip")
             ls.filetype_extend("javascript", { "jsdoc" })
 
-            --- TODO: What is expand?
-            vim.keymap.set({ "i" }, "<C-s>e", function() ls.expand() end, { silent = true })
+            --- not needed as lsp autocomplete does the same
+            -- vim.keymap.set({ "i" }, "<C-s>e", function() ls.expand() end, { silent = true })
 
-            vim.keymap.set({ "i", "s" }, "<C-s>;", function() ls.jump(1) end, { silent = true })
-            vim.keymap.set({ "i", "s" }, "<C-s>,", function() ls.jump(-1) end, { silent = true })
-
+            vim.keymap.set({ "i", "s" }, "<C-J>", function() ls.jump(1) end, { silent = true })
+            vim.keymap.set({ "i", "s" }, "<C-K>", function() ls.jump(-1) end, { silent = true })
             vim.keymap.set({ "i", "s" }, "<C-E>", function()
                 if ls.choice_active() then
                     ls.change_choice(1)
