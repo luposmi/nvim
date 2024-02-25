@@ -38,7 +38,7 @@ return {
         -- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/integrate-with-mason-nvim.md
         require('mason').setup({})
         require('mason-lspconfig').setup({
-            ensure_installed = { "bashls", "clangd", "dockerls", "gopls", "html", "jsonls", "jdtls", "lua_ls", "ocamllsp", "rust_analyzer", "taplo", "zls" },
+            ensure_installed = { "bashls", "clangd", "lua_ls", "rust_analyzer", "zls" },
             handlers = {
                 lsp_zero.default_setup,
                 lua_ls = function()
