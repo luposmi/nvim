@@ -10,21 +10,17 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "half page down, cursor in midd
 vim.keymap.set("n", "n", "nzzzv", { desc = "repeat Search stay in middle" })
 vim.keymap.set("n", "N", "Nzzzv", { desc = "repeat Search opposide stay in middle" })
 
--- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "paste without replacing buffer" })
 
 -- next greatest remap ever : asbjornHaland
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "copy to clippboard" })
 vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "copy to clippboard" })
-
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "delete to void" })
 
--- This is going to get me cancelled
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = "format from lsp"})
-
 
 -- quickfix
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
